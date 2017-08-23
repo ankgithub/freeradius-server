@@ -1463,7 +1463,7 @@ static ssize_t xlat_tokenize_literal(TALLOC_CTX *ctx, char *fmt, xlat_exp_t **he
 			ssize_t slen;
 			xlat_exp_t *next;
 
-			if (!p[1] || !strchr("%}dlmnsetDGHIMSTYv", p[1])) {
+			if (!p[1] || !strchr("%}cdlmnsetCDGHIMSTYv", p[1])) {
 				talloc_free(node);
 				*error = "Invalid variable expansion";
 				p++;
@@ -2201,6 +2201,7 @@ static char *xlat_aprint(TALLOC_CTX *ctx, REQUEST *request, xlat_exp_t const * c
 			gettimeofday(&now, NULL);
 			snprintf(str, freespace, "%" PRIu64, (uint64_t)now.tv_usec);
 		}
+			break;
 
 		case 'D': /* request date */
 			if (!localtime_r(&when, &ts)) goto error;

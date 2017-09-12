@@ -40,3 +40,4 @@ rlm_wimax
 rlm_yubikey
 rlm_redis
 rlm_rediswho
+rlm_raw

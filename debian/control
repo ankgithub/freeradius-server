@@ -184,3 +184,8 @@ Description: debug symbols for the FreeRADIUS packages
  FreeRADIUS is a modular, high performance and feature-rich RADIUS server.
  This package contains the detached debugging symbols for the Debian FreeRADIUS
  packages.
+
+Package: freeradius-raw
+Architecture: any
+Depends: freeradius (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}, ${dist:Depends}
+Description: RAW module for FreeRADIUS server
